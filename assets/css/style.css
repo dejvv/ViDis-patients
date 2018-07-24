@@ -1,0 +1,51 @@
+/* wrapper literarly around evertything */
+.custom_modal_header {
+  background-color: #2e6da4 !important;
+  color: white !important;
+}
+
+/* some helping classes */
+.text-left {
+	text-align: left;
+}
+
+.fs20 {
+	font-size: 20px;
+}
+
+.warning-header {
+	font-weight: 300;
+}
+
+.zero-margin {
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-right: 0;
+}
+
+/* div that is inside col-#-sm div and has margins */
+.inside_with_margin {
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-right: 20px;
+	background-color: orange;
+}
+
+/* pre in the modal body */
+pre {
+	white-space: pre-wrap;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #2e6da4;
+}

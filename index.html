@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+    <title>Graphs table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+     <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- make this files to http://212.235.189.98/cdn/.../david.js -->
+    <link rel="stylesheet" href="http://212.235.189.98/DiaGenKri/app/res/css/main.css">
+    <script src="http://212.235.189.98/DiaGenKri/app/res/js/filter.js"></script>
+
+    <script src="http://212.235.189.98/DiaGenKri/app/res/js/raphael/raphael.min.js"></script>
+    <script src="http://212.235.189.98/DiaGenKri/app/res/js/raphael/raphael.json.js"></script>
+
+    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/david/notify.min.js"></script>
+    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/david/raphael.pan-zoom.js"></script>
+
+    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/david/david.js"></script>
+    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/nermin/test.js"></script>
+    <script type="text/javascript" src="localhost/DiaGenKri/app/res/js/david/tree.js"></script>
+
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+
+</head>
+
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-2 full-height" style="background-color: blue; display: block">
+            <div class="inside_with_margin">t1</div>
+        </div>
+        <div class="col-sm-8 text-left flex-wrap">
+            <table id="pacientTable" class="table table-hover table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th>Ime bolezni</th>
+                        <th>Nasvet o bolezni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-2 full-height" style="background-color: red;">
+            <div class="inside_with_margin">t2</div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal TEST -->
+<div class="modal fade" id="testmodal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 id="h3id"></h3>
+                <!-- <div class="text-center"> -->
+                    <pre><p id="question"></p></pre>
+                <!-- </div> -->
+                <div id="testdiv"></div>
+                <div id="myProgress">
+                    <div id="myBar"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal disclaimer -->
+<div class="modal fade" id="disclaimermodal_og" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Opozorilo</h3>
+                <pre><p>Uporaba orodja ViDis poteka na lastno odgovornost in ni nadomestilo za obravnavo pri zdravniku specialistu!</p></pre>
+            </div>
+            <div class="modal-footer">
+                <button id="patient-agree_og" type="button" class="btn btn-success" data-dismiss="modal">Se strinjam</button>
+                <button id="patient-disagree_og" type="button" class="btn btn-warning" data-dismiss="modal">Se ne strinjam</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Central Modal Medium Warning -->
+<div class="modal fade" id="centralModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-warning" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">Modal Warning</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                    <p>Uporaba orodja ViDis poteka na lastno odgovornost in ni nadomestilo za obravnavo pri zdravniku specialistu!</p>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-warning">Se strinjam</a>
+                <a type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Se ne strinjam</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Central Modal Medium Warning-->
+
+<!-- Button trigger modal-->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalWarning">Launch modal1</button>
+
+Button trigger modal-->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button> -->
+
+<!--Modal: modalPush-->
+<div class="modal fade" id="disclaimermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div id="warning-header" class="modal-header d-flex justify-content-center custom_modal_header fs20">
+                <p class="heading zero-margin">Opozorilo</p>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <!-- <i class="fa fa-exclamation fa-4x animated rotateIn mb-4"></i> -->
+                <!-- <i class="fa fa-exclamation"></i> -->
+                <p class="text-left">Uporaba orodja ViDis poteka na lastno odgovornost in ni nadomestilo za obravnavo pri zdravniku specialistu!</p>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+                <a type="button" id="patient-agree" class="btn btn-primary" data-dismiss="modal">Se strinjam</a>
+                <a type="button" id="patient-disagree" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Se ne strinjam</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: modalPush-->
+
+
+<!-- Modal content(canvas) -->
+<div class="modal" id="content"></div>

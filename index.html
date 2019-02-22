@@ -2,7 +2,7 @@
 <html lang="sl">
 
 <head>
-    <title>Graphs table</title>
+    <title>For patients</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -18,68 +18,229 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<!-- make this files to http://212.235.189.98/cdn/.../david.js -->
-    <link rel="stylesheet" href="http://212.235.189.98/DiaGenKri/app/res/css/main.css">
-    <script src="http://212.235.189.98/DiaGenKri/app/res/js/filter.js"></script>
+    <link rel="stylesheet" href="/app/res/css/main.css">
+    <script src="/app/res/js/filter.js"></script>
 
-    <script src="http://212.235.189.98/DiaGenKri/app/res/js/raphael/raphael.min.js"></script>
-    <script src="http://212.235.189.98/DiaGenKri/app/res/js/raphael/raphael.json.js"></script>
+    <script src="/app/res/js/raphael/raphael.min.js"></script>
+    <script src="/app/res/js/raphael/raphael.json.js"></script>
 
-    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/david/notify.min.js"></script>
-    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/david/raphael.pan-zoom.js"></script>
+    <script type="text/javascript" src="/app/res/js/david/notify.min.js"></script>
+    <script type="text/javascript" src="/app/res/js/david/raphael.pan-zoom.js"></script>
 
-    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/david/david.js"></script>
-    <script type="text/javascript" src="http://212.235.189.98/DiaGenKri/app/res/js/nermin/test.js"></script>
-    <script type="text/javascript" src="localhost/DiaGenKri/app/res/js/david/tree.js"></script>
-
+    <script type="text/javascript" src="/app/res/js/david/david.js"></script>
+    <script type="text/javascript" src="/app/res/js/nermin/test.js"></script>
+    <script type="text/javascript" src="/app/res/js/david/tree.js"></script>
 
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/filter_si.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 
 
 
 
 </head>
-
-<div class="container-fluid">
-    <div class="row content">
-        <div class="col-sm-2 full-height" style="background-color: blue; display: block">
-            <div class="inside_with_margin">t1</div>
+   <div id="loader" class="sk-fading-circle" style="display: none;">
+          <div class="sk-circle1 sk-circle"></div>
+          <div class="sk-circle2 sk-circle"></div>
+          <div class="sk-circle3 sk-circle"></div>
+          <div class="sk-circle4 sk-circle"></div>
+          <div class="sk-circle5 sk-circle"></div>
+          <div class="sk-circle6 sk-circle"></div>
+          <div class="sk-circle7 sk-circle"></div>
+          <div class="sk-circle8 sk-circle"></div>
+          <div class="sk-circle9 sk-circle"></div>
+          <div class="sk-circle10 sk-circle"></div>
+          <div class="sk-circle11 sk-circle"></div>
+          <div class="sk-circle12 sk-circle"></div>
         </div>
-        <div class="col-sm-8 text-left flex-wrap">
+<div id="bodi">
+        <!-- <div id="loader" ></div> -->
+        <!-- <div id="loader" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> -->
+     
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="logo-wrap">
+                    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg class="svg-link" version="1.1" height="35px" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="280 250 280 190" style="enable-background:new 0 0 841.9 595.3;" xml:space="preserve">
+                        <a href="../../public/home">
+                        <g id="XMLID_1783_">
+                            <text id="XMLID_1_" transform="matrix(1.244 0 0 1 291.3076 436.5898)" class="st0 st1 st2">ViDis</text>
+                            <g id="XMLID_2190_">
+                                <line id="XMLID_2192_" class="st3" x1="487.9" y1="375.4" x2="487.9" y2="391.2"/>
+                                <line id="XMLID_2191_" class="st3" x1="477.3" y1="383.3" x2="498.6" y2="383.3"/>
+                            </g>
+                        </g>
+                        <path id="XMLID_12_" class="st0" d="M538.7,315.5c-116.8,116.9-247.4,0-247.4,0S421.9,198.7,538.7,315.5z"/>
+                        <ellipse id="XMLID_11_" class="st4" cx="418" cy="315.5" rx="53.2" ry="43.4"/>
+                        <ellipse id="XMLID_10_" class="st0" cx="418" cy="315.5" rx="30" ry="24.5"/>
+                        <g id="XMLID_14_">
+                            <rect id="XMLID_22_" x="416.5" y="302.6" class="st4" width="3" height="25.9"/>
+                            <rect id="XMLID_15_" x="405" y="314" class="st4" width="25.9" height="3"/>
+                        </g>
+                        </a>
+                    </svg>
+                </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/public/register"><span class="glyphicon glyphicon-log-in"></span> Registration</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" style="height: 100%;">
+    <!-- <div class="row" style="position: relative;">
+        <div class="col-sm-12 col-xs-12 form-group well well-sm" >
+            <div class="form-group full-width">
+                <input onkeyup="filterTable()" type="email" class="form-control full-width" id="gName" placeholder="Iskanje po imenu"
+                style="width:100%;">
+            </div>
+            <div class="checkboxes_inline">
+                <div class=label_input>
+                    <input checked onchange="filterTable()" type="checkbox" id="typeADiagnostic" name="aType" value="1">
+                    <label class="radio-inline" for="typeADiagnostic">Diagnoza</label>
+                </div>
+                <div class=label_input>
+                    <input checked onchange="filterTable()" id="typeATreatment" type="checkbox" name="aType" value="2">
+                    <label class="radio-inline" for="typeATreatment">Zdravljenje</label>
+                </div>
+                <div class=label_input>
+                    <input checked onchange="filterTable()" type="checkbox" id="typeAOther" name="aType" value="4">
+                    <label class="radio-inline" for="typeAOther">Ostalo</label>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="row" style="position: relative;">   
+        <!-- <div id="loader" ></div> -->
+        <!-- <div id="loader" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> -->
+
+        <!-- <div class="col-sm-2 full-height" style="background-color: blue; display: block">
+            <div class="inside_with_margin">t1</div>
+        </div> -->
+        <div class="col-md-2 col-xs-12 sidenav h-100 hide_md">
+            <!-- <div class="well"> -->
+                <h4>Links</h4>
+                <p>
+                <a href="http://www.limfom-levkemija.org/domov.html" target="_blank"><img class="image img-responsive img-thumbnail" src="/app/res/photos/logo_LL.png"></a>
+            <!-- </div> -->
+                </p>
+            <!-- <div class="well"> -->
+                <p>
+                <a href="http://lrss.fri.uni-lj.si/bio/" target="_blank"><img class="image img-responsive img-thumbnail" src="/app/res/photos/BG-logo.PNG"></a>
+            <!-- </div> -->
+                </p>
+		<p>
+		<a href="http://www.mf.uni-lj.si/" target="_blank"><img class="image img-responsive img-thumbnail" src="../../app/res/photos/mf-logo.png"></a>
+		</p>
+        </div>
+        
+        <div class="col-md-8 col-xs-12">
+            <div class="form-group well well-sm">
+                <div class="form-group full-width">
+                    <input onkeyup="filterTable()" type="email" class="form-control full-width" id="gName" placeholder="Search algorithm by name"
+                    style="width:100%;">
+                </div>
+                <div class="checkboxes_inline">
+                    <div class=label_input>
+                        <input checked onchange="filterTable()" type="checkbox" id="typeADiagnostic" name="aType" value="1">
+                        <label class="radio-inline" for="typeADiagnostic">Diagnostic</label>
+                    </div>
+                    <div class=label_input>
+                        <input checked onchange="filterTable()" id="typeATreatment" type="checkbox" name="aType" value="2">
+                        <label class="radio-inline" for="typeATreatment">Treatment</label>
+                    </div>
+                    <div class=label_input>
+                        <input checked onchange="filterTable()" type="checkbox" id="typeAOther" name="aType" value="4">
+                        <label class="radio-inline" for="typeAOther">Other</label>
+                    </div>
+                </div>
+            </div>
             <table id="pacientTable" class="table table-hover table-responsive table-bordered">
                 <thead>
                     <tr>
-                        <th>Ime bolezni</th>
-                        <th>Nasvet o bolezni</th>
+                        <th>#</th>
+                        <th>Algorithm name</th>
+                        <th>Algorithm type</th>
+                        <th title= "Datum zadnje posodobitve nasveta o bolezni">Updated</th>
+                        <th>Advice</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-2 full-height" style="background-color: red;">
-            <div class="inside_with_margin">t2</div>
+        <div class="col-md-2 col-xs-12 sidenav">
+            <h4 class="show_md">Links</h4>
+            <div class="col-xs-12">
+                <div class="well show_md col-xs-4 img_conn">
+                    <a href="http://www.limfom-levkemija.org/domov.html" target="_blank"><img class="image img-responsive img-thumbnail mh-100" src="/app/res/photos/logo_LL.png"></a>
+                </div>
+                <div class="well show_md col-xs-4 img_conn">
+                    <a href="http://lrss.fri.uni-lj.si/bio/" target="_blank"><img class="image img-responsive img-thumbnail mh-100" src="/app/res/photos/BG-logo.PNG"></a>
+                </div>
+		<div class="well show_md col-xs-4 img_conn">
+                    <a href="http://www.mf.uni-lj.si/" target="_blank"><img class="image img-responsive img-thumbnail mh-100" src="../../app/res/photos/mf-logo.png"></a>
+                </div>
+            </div>
+            <h4>The project was made possible by</h4>
+            <div class="well col-xs-3 col-md-12 img_conn">
+                <img src="/app/res/photos/UL.png" class="img-responsive">
+            </div>
+            <div class="well col-xs-3 col-md-12 img_conn">
+                <img src="/app/res/photos/SVN.png" class="img-responsive">
+            </div>
+            <div class="well col-xs-3 col-md-12 img_conn">
+                <img src="/app/res/photos/MIZS_AN.png" class="img-responsive">
+            </div>
+            <div class="well col-xs-3 col-md-12 img_conn">
+                <img src="/app/res/photos/esc_an.jpg" class="img-responsive">
+            </div>
         </div>
     </div>
 </div>
+</div> <!-- end of "bodi" div-->
 
 <!-- Modal TEST -->
 <div class="modal fade" id="testmodal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog" id="make-big">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
                 <h3 id="h3id"></h3>
                 <!-- <div class="text-center"> -->
-                    <pre><p id="question"></p></pre>
+                    <p id="question"></p>
                 <!-- </div> -->
                 <div id="testdiv"></div>
-                <div id="myProgress">
+                <!-- <div id="myProgress">
                     <div id="myBar"></div>
+                </div> -->
+
+                <div id="myProgress" class="progress">
+                  <div id="myBar" class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
+                <!-- <div id="progressbar">
+                    <div></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                  </div> -->
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+            <div class="modal-footer" id="m-footer">
+                <button id="go_back_button" type="button" class="btn btn-default">Back</button>
+                <button id="start_over_button" type="button" class="btn btn-default display-none">Start from the beginning</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
@@ -87,88 +248,30 @@
 </div>
 
 <!-- Modal disclaimer -->
-<div class="modal fade" id="disclaimermodal_og" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <h3>Opozorilo</h3>
-                <pre><p>Uporaba orodja ViDis poteka na lastno odgovornost in ni nadomestilo za obravnavo pri zdravniku specialistu!</p></pre>
-            </div>
-            <div class="modal-footer">
-                <button id="patient-agree_og" type="button" class="btn btn-success" data-dismiss="modal">Se strinjam</button>
-                <button id="patient-disagree_og" type="button" class="btn btn-warning" data-dismiss="modal">Se ne strinjam</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<!-- Central Modal Medium Warning -->
-<div class="modal fade" id="centralModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-notify modal-warning" role="document">
-        <!--Content-->
-        <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header">
-                <p class="heading lead">Modal Warning</p>
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" class="white-text">&times;</span>
-                </button>
-            </div>
-
-            <!--Body-->
-            <div class="modal-body">
-                <div class="text-center">
-                    <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                    <p>Uporaba orodja ViDis poteka na lastno odgovornost in ni nadomestilo za obravnavo pri zdravniku specialistu!</p>
-                </div>
-            </div>
-
-            <!--Footer-->
-            <div class="modal-footer justify-content-center">
-                <a type="button" class="btn btn-warning">Se strinjam</a>
-                <a type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Se ne strinjam</a>
-            </div>
-        </div>
-        <!--/.Content-->
-    </div>
-</div>
-<!-- Central Modal Medium Warning-->
-
-<!-- Button trigger modal-->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalWarning">Launch modal1</button>
-
-Button trigger modal-->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button> -->
-
-<!--Modal: modalPush-->
 <div class="modal fade" id="disclaimermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-notify modal-info" role="document">
         <!--Content-->
         <div class="modal-content text-center">
             <!--Header-->
             <div id="warning-header" class="modal-header d-flex justify-content-center custom_modal_header fs20">
-                <p class="heading zero-margin">Opozorilo</p>
+                <p class="heading zero-margin">Warning</p>
             </div>
             <!--Body-->
             <div class="modal-body">
                 <!-- <i class="fa fa-exclamation fa-4x animated rotateIn mb-4"></i> -->
                 <!-- <i class="fa fa-exclamation"></i> -->
-                <p class="text-left">Uporaba orodja ViDis poteka na lastno odgovornost in ni nadomestilo za obravnavo pri zdravniku specialistu!</p>
+                <p class="text-left">The use of the ViDis tool takes place at your own risk and is not a substitute for treatment by a doctor specialists!</p>
             </div>
             <!--Footer-->
             <div class="modal-footer flex-center">
-                <a type="button" id="patient-agree" class="btn btn-primary" data-dismiss="modal">Se strinjam</a>
-                <a type="button" id="patient-disagree" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Se ne strinjam</a>
+                <a type="button" id="patient-agree" class="btn btn-primary" data-dismiss="modal">I agree</a>
+                <a type="button" id="patient-disagree" class="btn btn-outline-primary waves-effect" data-dismiss="modal">I disagree</a>
             </div>
         </div>
         <!--/.Content-->
     </div>
 </div>
-<!--Modal: modalPush-->
+<!--Modal: disclaimer-->
 
 
 <!-- Modal content(canvas) -->

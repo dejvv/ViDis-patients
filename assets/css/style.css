@@ -34,18 +34,624 @@
 }
 
 /* pre in the modal body */
-pre {
+/*pre {
 	white-space: pre-wrap;
-}
+}*/
+
+/* progress bar */
 
 #myProgress {
-  width: 100%;
-  background-color: #ddd;
-  border-radius: 4px;
+  /*width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 4px;*/
+  margin-top: 30px;
+  /*padding: 1px;
+  border: 1px solid #ccc;*/
 }
 
 #myBar {
-  width: 0%;
-  height: 30px;
+  /*width: 0%;*/
+  /*height: 20px;*/
+  /*background-color: #2e6da4;*/
+  /*border-radius: 4px;*/
+
+  /* width animation */
+  /*background-image: -webkit-linear-gradient(rgba(46, 109, 164, 1), rgba(46, 109, 164, 1));
+  background-image: -o-linear-gradient(rgba(46, 109, 164, 1), rgba(46, 109, 164, 1));
+  background-image: linear-gradient(rgba(46, 109, 164, 1), rgba(46, 109, 164, 1));*/
+  transition-duration: 1.125s;
+  transition-timing-function: ease-in-out;
+  transition-property: width;
+
+  /* center text horizontally and vertically */
+  /*text-align: center;
+  line-height: 20px;
+  color: white;*/
+}
+
+/* button to go back for one vertex */
+#go_back_button {
+	float: left;
+}
+
+/* button to start over */
+#start_over_button {
+  margin: auto;
+}
+
+/* style for main table - patients table */
+#pacientTable {
+  background-color: #F9F9F9;
+  
+/*  display: block;
+  height: 100%;*/
+  /*margin-top: 20px;*/
+}
+
+/*#pacientTable > td {
+  width: 400px;
+}*/
+
+
+.big-cell {
+  width: 25%;
+}
+
+.pacient-button {
+  width: 10%;
+}
+
+/* padding */
+.padding_10px {
+  padding: 10px;
+}
+
+/* small witdh for cell in table */
+.small-cell {
+  width: 1%;
+  max-width: 3%;
+}
+
+/* hides elements */
+.display-none {
+  display: none;
+}
+
+/* display element in flex style */
+.display-flex {
+  display: flex;
+}
+
+/* for table cells that are supposed to take little space */
+.nowrap {
+  width:1%;
+  white-space:nowrap;
+}
+
+/* div for label + input */
+.label_input {
+  width: 33%;
+  display: inline;
+  padding-right: 15px;
+}
+
+.radio-inline {
+  padding-left: 0px;
+}
+
+
+/* Center the loader */
+/*#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2000;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}*/
+
+/*#loader {
+  display: none;
+}*/
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#fixed_div {
+  position: fixed;
+}
+
+.lds-spinner {
+  color: black;
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  z-index: 50000;
+}
+.lds-spinner div {
+  transform-origin: 32px 32px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 29px;
+  width: 5px;
+  height: 14px;
+  border-radius: 20%;
+  background: #000000;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*.modal-open .container-fluid, .modal-open  .container {
+    -webkit-filter: blur(5px) grayscale(90%);
+}*/
+
+/* question in patients div - purpose of displaying long text */
+#question {
+    font-family: "Helvetica";
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.blur {
+    box-shadow: 0px 0px 20px 20px rgba(255,255,255,1);
+    text-shadow: 0px 0px 10px rgba(51, 51, 51, 0.9);
+    filter: blur(5px) grayscale(90%);
+    -webkit-filter: blur(5px) grayscale(90%); 
+    -moz-filter: blur(5px) grayscale(90%);
+    -o-filter: blur(5px) grayscale(90%); 
+    -ms-filter: blur(5px) grayscale(90%); 
+    /*-webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;*/
+}
+
+
+/* TODO (?) */
+.sk-fading-circle {
+  width: 15vh; /* change to pixels or not? */
+  height: 15vh;
+  position: absolute;
+  margin-left: -7.5vh;
+  margin-top: -7.5vh;
+  z-index: 50000;
+}
+
+.sk-fading-circle .sk-circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sk-fading-circle .sk-circle:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
   background-color: #2e6da4;
+  border-radius: 100%;
+  -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+          animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+}
+.sk-fading-circle .sk-circle2 {
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.sk-fading-circle .sk-circle3 {
+  -webkit-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+.sk-fading-circle .sk-circle4 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.sk-fading-circle .sk-circle5 {
+  -webkit-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+.sk-fading-circle .sk-circle6 {
+  -webkit-transform: rotate(150deg);
+      -ms-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+.sk-fading-circle .sk-circle7 {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.sk-fading-circle .sk-circle8 {
+  -webkit-transform: rotate(210deg);
+      -ms-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+.sk-fading-circle .sk-circle9 {
+  -webkit-transform: rotate(240deg);
+      -ms-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+.sk-fading-circle .sk-circle10 {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.sk-fading-circle .sk-circle11 {
+  -webkit-transform: rotate(300deg);
+      -ms-transform: rotate(300deg);
+          transform: rotate(300deg); 
+}
+.sk-fading-circle .sk-circle12 {
+  -webkit-transform: rotate(330deg);
+      -ms-transform: rotate(330deg);
+          transform: rotate(330deg); 
+}
+.sk-fading-circle .sk-circle2:before {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s; 
+}
+.sk-fading-circle .sk-circle3:before {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s; 
+}
+.sk-fading-circle .sk-circle4:before {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s; 
+}
+.sk-fading-circle .sk-circle5:before {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s; 
+}
+.sk-fading-circle .sk-circle6:before {
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s; 
+}
+.sk-fading-circle .sk-circle7:before {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s; 
+}
+.sk-fading-circle .sk-circle8:before {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s; 
+}
+.sk-fading-circle .sk-circle9:before {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+.sk-fading-circle .sk-circle10:before {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+.sk-fading-circle .sk-circle11:before {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+.sk-fading-circle .sk-circle12:before {
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+
+@-webkit-keyframes sk-circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+@keyframes sk-circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; } 
+}
+
+
+
+/* hides element when width < 992px */
+.hide_md {
+  display: none;
+}
+
+.img_conn {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .show_md {
+    display: none;
+  }
+
+  .hide_md {
+    display: block;
+  }
+
+  .img_conn {
+  }
+}
+
+h4 {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 7vw;
+}
+
+@media only screen and (min-width: 992px)  {
+  h4 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 1921px){
+  table, input, label, h4{
+    font-size: 0.875vw;
+    line-height: 0.875vw;
+  }
+
+  .form-control {
+    font-size: 0.875vw;
+    line-height: 0.875vw;
+    height: 3em;
+  }
+
+  table .btn {
+    font-size: 0.875vw;
+  }
+
+  input[type=checkbox] {
+    transform: scale(2);
+  }
+
+  pre {
+    font-size: 1vw;
+  }
+
+  .modal .btn {
+    font-size: 1vw;
+    height: 2vw;
+  }
+
+  .modal h3 {
+    font-size: 1.125vw;
+  }
+
+  .progress {
+    height: 2vw;
+  }
+
+  .progress-bar {
+    line-height: 2vw;
+    font-size: 1vw
+  }
+
+  #disclaimermodal{
+    font-size: 1vw;
+  }
+
+  #disclaimermodal .btn{
+    font-size: 1vw;
+    height: 2vw;
+  }
+
+}
+
+/*@media only screen and (max-width: 768px)  {
+  h3 {
+    font-size: 3em;
+  }
+}*/
+/*@media only screen and (min-width: 1200px) {
+  .show_md {
+    display: none;
+  }
+
+  .hide_md {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .body{
+    font-size: 
+  }
+}*/
+
+
+
+
+
+/*#progressbar {
+    background-color: black;
+    border-radius: 8px;
+    padding: 3px;
+    width: 400px;
+}
+
+#progressbar div {
+    background-color: #0063C6;
+    width: 50%;
+    height: 10px;
+    border-radius: 5px;
+    animation:loadbar 2s;
+    -webkit-animation:loadbar 2s;
+}
+
+@keyframes loadbar {
+
+  0% {
+      width: 0%;
+  }
+
+   100% {
+      width: 50%;
+   }
+
+}
+@-webkit-keyframes loadbar {
+
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+
+}
+
+.progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 16px;
+  border-radius: 4px;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}*/
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       https://css-tricks.com/webkit-sibling-bug/
+ */
+
+/*#five:checked ~ .progress > .progress-bar {
+  width: 5%;
+  background-color: #f63a0f;
+}
+
+#twentyfive:checked ~ .progress > .progress-bar {
+  width: 25%;
+  background-color: #f27011;
+}
+
+#fifty:checked ~ .progress > .progress-bar {
+  width: 50%;
+  background-color: #f2b01e;
+}
+
+#seventyfive:checked ~ .progress > .progress-bar {
+  width: 75%;
+  background-color: #f2d31b;
+}
+
+#onehundred:checked ~ .progress > .progress-bar {
+  width: 100%;
+  background-color: #86e01e;
+}*/
+
+
+.mh-100{
+  max-height: 100px;
 }

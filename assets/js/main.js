@@ -69,6 +69,10 @@ function start() {
 			const tbody = document.getElementById("pacientTable").tBodies.item(0);
 			let i=0;
 			data_array.forEach(function(element) {
+				// need only english algorithms
+				if (element.algorithm_language != "en")
+					return;
+
 				// element should be intended for patients and curated in order to be displayed, also it should not be private
 				// ---------- NOT GOOD, send requests and filter that on API ----------
 				if(element.intended != 0 || element.curated != 1 || element.private != 0){
@@ -168,7 +172,7 @@ function chooseDate(created, modified) {
 }
 
 // show disclaimer at the start
-$(function(){
+window.onload = function () {
 	start();
 
 	$("#patient-agree").click(function(){
@@ -209,4 +213,4 @@ $(function(){
 	$("#testmodal").on("hide.bs.modal", function() {
 		document.getElementById("bodi").classList.remove("blur");
 	});
-});
+};
